@@ -7,6 +7,7 @@ class HikesView {
 
   renderHikeList(hikeList, listElement) {
     // loop through our list of hikes building out the appropriate HTML for each and append it to the listElement
+    // I don't know why this is an error!!
     listElement.innerHTML = "";
     // console.log(listElement);
     hikeList.forEach(hike => {
