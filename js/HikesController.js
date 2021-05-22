@@ -2,7 +2,7 @@ import HikeModel from './HikeModel.js';
 import HikesView from './HikesView.js';
 
 // Hike controller
-class HikesController {
+export default class HikesController {
   constructor(parentId) {
     this.parentElement = document.getElementById(parentId);
     // this is how our controller will know about the model and view...we add them right into the class as members.
@@ -13,7 +13,7 @@ class HikesController {
   showHikeList() {
     //  this will get called each time we need to display our full hike list. It should grab the list of hikes from the Model, and then send them to the view.
     const hikeList = this.hikeModel.getAllHikes();
-    this.hikesView.renderHikeList(hikeList, this.parentElement);
+    this.hikesView.renderHikeList(this.parentElement, hikeList);
     this.addHikeListener();
   }
 
@@ -35,5 +35,3 @@ class HikesController {
     });
   }
 }
-
-export default HikesController;
